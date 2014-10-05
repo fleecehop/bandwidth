@@ -1,0 +1,23 @@
+.falco {
+	background-image: url('../img/falco2.png');
+	height: 360px;
+	width: 400px;
+}
+
+.falco:hover {
+	background-image: url('../img/falco1.png');
+}
+
+.navbar-bandwidth {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.navText{
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	color: #000000;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;    
+}
