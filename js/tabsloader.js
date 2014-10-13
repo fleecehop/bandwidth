@@ -6,20 +6,25 @@ $(function() {
         $('#homeTab').parent('li').addClass('active');
 
     }
-    else if (window.location.href.indexOf("team") > -1) {
+    else if (window.location.href.indexOf("homies") > -1) {
 
-        $('#teamTab').parent('li').addClass('active');
-
-    }
-    else if (window.location.href.indexOf("media") > -1) {
-
-        $('#mediaTab').parent('li').addClass('active');
+        $('#homiesTab').parent('li').addClass('active');
 
     }
+    else if (window.location.href.indexOf("live") > -1) {
 
-    else if (window.location.href.indexOf("blog") > -1) {
+        $('#liveTab').parent('li').addClass('active');
 
-        $('#blogTab').parent('li').addClass('active');
+    }
+
+    else if (window.location.href.indexOf("merch") > -1) {
+
+        $('#merchTab').parent('li').addClass('active');
+
+    }
+    else if (window.location.href.indexOf("releases") > -1) {
+
+        $('#releasesTab').parent('li').addClass('active');
 
     }
     else{
