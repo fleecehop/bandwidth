@@ -9,12 +9,15 @@
 ?>
 
 <html>
-	<br>
-	<div align='center' >
-		<iframe style="border: 0; width: 400px; height: 400px;" src="https://bandcamp.com/EmbeddedPlayer/album=159500848/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless><a href="http://bandwidthboysforever.bandcamp.com/album/bandwidthboys-battle-one">#BANDWIDTHBOYS BATTLE ONE by BANDWIDTHBOYS</a></iframe>
-	</div>
+		<a href='live/index.html'>		
+			<div align='center' >
+				<br><br>
+			
+				<div class='falco'></div>
+			</div>
+		</a>
 
-</body>
+	</body>
 
 
 </html>

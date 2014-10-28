@@ -10,7 +10,6 @@
 ?>
 <html>
 	<body>
-		
 		<div id='wrapper'>
 			<div id='bioView' >
 				<h3>BIO</h3>
@@ -27,18 +26,13 @@
 				<?php
 					//number of posts to display
 					$numPosts = 2;
-
-					for ($i=0; $i<$numPosts;$i++)
+					for ($i=0; $i<3;$i++)
 					{
 						$request_url = "http://youcanbefalco.tumblr.com/api/read?type=post&start=".$i." &num=1";
 						$xml = simplexml_load_file($request_url);
 						$title = $xml->posts->post->{'regular-title'};
 						$date= $xml->posts->post['date'];
-								
-						
-						$ddate= explode(" ",$date);
-						$title = "<i>" . $ddate[0] . " " .  $ddate[1] . " " . $ddate[2] . "</i> ---- ". $title; 
-						
+						$title =$date ."-- ". $title; 
 						$post = $xml->posts->post->{'regular-body'};
 						$link = $xml->posts->post['url'];
 						echo '<div class=blogPost>';

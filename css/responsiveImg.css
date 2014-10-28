@@ -6,7 +6,6 @@
 body {
 	font-family: 'Helvetica Neue', arial, sans-serif;
 	font-weight: 200;
-	color: white;
 }
 
 h1 {
@@ -46,7 +45,7 @@ ul.grid-nav li {
 ul.grid-nav li a {
 	display: inline-block;
 	background: #000;
-	color: grey;
+	color: #fff;
 	padding: 10px 20px;
 	text-decoration: none;
 	border-radius: 4px;
@@ -54,10 +53,10 @@ ul.grid-nav li a {
 	-webkit-border-radius: 4px;
 }
 ul.grid-nav li a:hover {
-	background: grey;
+	background: #7b0;
 }
 ul.grid-nav li a.active {
-	background: grey;
+	background: #333;
 }
 .grid-container {
 	display: none;
@@ -72,11 +71,12 @@ ul.rig li {
 	display: inline-block;
 	padding: 10px;
 	margin: 0 0 2.5% 2.5%;
-	background: #000;
+	background: #fff;
+	border: 1px solid #ddd;
 	font-size: 16px;
 	font-size: 1rem;
 	vertical-align: top;
-	/*box-shadow: 0 0 5px #ddd;*/
+	box-shadow: 0 0 5px #ddd;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;

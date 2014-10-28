@@ -12,11 +12,13 @@
 
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="../css/styles.css"></link>
+	</head>
 	<body bgcolor="black" style="z-index:'-1'">
 
 		<div align='center' "z-index:'1'" >
-			
-			<!-- OLD BW UPS LOGO AND SC AND TWITTER ICONS 
+			<!--
 			<br>
 			<img src="../img/bandwidth2.png" alt="logo"  style="padding-left: 370px;width:160px;height:62px;cursor:pointer"></img>
 		
@@ -42,7 +44,9 @@
 		</div>
 		-->
 		<div align='center' "z-index:'1'" >
-
+			<!--
+			<script type="text/javascript">var tinychat = { room: "bandwidthboys", join: "auto"};</script><script src="http://tinychat.com/js/embed.js"></script>
+			-->
 			<iframe id="tinychat_embedthboys&colorbk=0xffffff&join=auto&api=list" style="width: 80%; height: 600px; border: 0pt noned" frameborder="0" src="http://tinychat.com/embed/chat.html?room=bandwi;"></iframe>
 			
 			<a class="twitter-timeline"  width="140px" height="20%" href="https://twitter.com/hashtag/bandwidthboys" data-chrome="transparent" data-widget-id="515649901888159744">#bandwidthboys Tweets</a>
@@ -50,6 +54,12 @@
 		</div>
 		<br>
 
+		
+		<script src='../js/snowfall.min.js'></script>
+		<script type='text/javascript'>
+		//default options
+		snowFall.snow(document.body);
+		</script>
 		
 		
 		<div align='center'>	
