@@ -1,23 +1,42 @@
 
+@font-face {
+    font-family: other;
+    src: url('../fonts/Messing About.ttf');
+}
 
 .falco {
 	background-image: url('../img/falco2.png');
-	height: 360px;
-	width: 400px;
 }
 
 .falco:hover {
 	background-image: url('../img/falco1.png');
 }
 
+.navbar{
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
 .navbar-bandwidth {
 	background-color: #ffffff;
+	opacity: 1;
 	color: #000000;
 }
 
 .navText{
-	font-family: 'Arial', CenturyGothic, AppleGothic, sans-serif;
+	font-family: coffee;
 	color: #000000;
+	font-size: 15px;
+	font-style: italic;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -25,34 +44,44 @@
 }
 
 #wrapper {
-     width: 1205px;
+     width: 100;
      margin: 0 auto;
+     height: 100%;
 }
 #bioView, #blogView {
 	font-family: 'Helvetica';
-    border: 1px solid grey;
     float: left;
     min-height: 450px;
     color: #a0a0a0;
     padding: 10px;
+    margin: 0;
+    /*width: 100%;*/
 }
 #bioView {
-     width: 40%;
-     background-color: #000;
+	
+    width: 40%;
+    background-color: transparent;
 }
-
+#bioView p{
+	padding: 20px;
+}
 #blogView {
-    width: 60%;
+    /*width: 100%;*/
     height: 300px;
-    overflow: auto;
-    background-color: #000;
+    background-color: transparent;
+    overflow: hidden;
 }
 
 .blogPost{
 	border-bottom: 1px solid #444;
 }
 .blogPost p{
+	width:55%;
 	text-align: left;
 	text-indent: 50px;
 	padding: 20px;
+}
+.body{
+	background-color: #000;
+	z-index:'-1';
 }
