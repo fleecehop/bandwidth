@@ -5,7 +5,7 @@
 	include 'php/nav.php';	
 	include 'php/header.php';
 
-
+	//Todo:make twitter and tinychat height/width responsive
 
 ?>
 
@@ -46,7 +46,7 @@
 			<br>
 			<iframe id="tinychat_embedthboys&colorbk=0xffffff&join=auto&api=list" style="width: 80%; height: 500px; border: 0pt noned" frameborder="0" src="http://tinychat.com/embed/chat.html?room=bandwi;"></iframe>
 			
-			<a class="twitter-timeline"  width="140px" height="500px" href="https://twitter.com/hashtag/bandwidthboys" data-chrome="transparent" data-widget-id="515649901888159744">#bandwidthboys Tweets</a>
+			&nbsp;&nbsp; &nbsp;<a class="twitter-timeline" width="200px" height="500px" style="margin-left:15px;position:relative;" href="https://twitter.com/hashtag/bandwidthboys" data-chrome="transparent" data-widget-id="515649901888159744">#bandwidthboys Tweets</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 		<br>

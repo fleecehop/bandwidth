@@ -9,6 +9,9 @@
 	<link rel="stylesheet" href="css/snowfallstyles.css"></link>
 	<link rel="stylesheet" href="css/jquery.terminal.css"></link>
 	<link rel="stylesheet" href="css/amaran.min.css">
+	<link rel="stylesheet" href="css/ryanhuff.css">
+
+
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>    
 
@@ -167,13 +170,24 @@
 	</nav>
 </body>	
 
+<style>
+	/* THIS ANIMATION STYLING GOES WITH RYANHUFF.CSS */
+
+	/* keyframes for rotating animation */
+	@-webkit-keyframes spin {
+	  from { transform: rotateY(0); }
+	  to   { transform: rotateY(360deg); }
+	}
+
+</style>
+
 </html>
 
 <script>
 
 $(function() {
 	
-	//notifications
+	//loads when the page loads falco//twitter
 	$.amaran({
 
 		content:{
@@ -187,14 +201,68 @@ $(function() {
 		delay:'5000',
 
 		themeTemplate:function(data){
-			return '<div class="mydiv" id="bwtwitter"><div class="icon" style="width:70px;height:70px;position:relative;float:left;"><img id="falcoface" src="'+data.img + '" style="max-width:100%;"></div><div class="info" style="padding-top: 10px;"><span class="title">Follow<br>@BandWidthBoys</span></div></div>';
+			return '<div class="mydiv" id="bwtwitter"><div class="icon" style="width:50px;height:50px;position:relative;float:left;"><img id="falcoface" src="'+data.img + '" style="max-width:100%;"></div><div class="info" style="padding-top: 10px;"><span class="title">Follow<br>@BandWidthBoys</span></div></div>';
 		},
 
-		position:'bottom right'
+		position:'top right'
 	});
 
-	//every 10 seconds
+	//every 10 seconds ryan huff is online
 	setInterval(function(){
+
+		//notifications
+		$.amaran({
+
+			content:{
+				img:'img/crocktoberfest.jpg',
+				themeName:'myTheme',
+				message1:'Ryan Huff',
+				message2:'is online!'
+			},
+
+			delay:'3000',
+
+			themeTemplate:function(data){
+				return '<div class="mydiv" ><div class="icon" style="position:absolute;float:left; margin-left:10px; top:0px;"><div class="wrapper"><div class="cube"><b class="front"><img src="'+ data.img + '" /></b><b class="back"><img src="'+ data.img + '" /></b><b class="top"></b><b class="bottom"></b><b class="left"><img src="'+ data.img + '" /></b><b class="right"><img src="'+ data.img + '" /></b></div></div></div><div class="info" style="padding-top: 10px; margin-left:90px;  position:relative; width=100%;"><span class="title">'+ data.message1 + '</span><br><span>'+ data.message2 + '</span></div></div>';
+			},
+
+			position:'top right'
+		});
+
+	},10000);
+
+	//every 15 seconds fleece
+	setInterval(function(){
+
+		//notifications
+		$.amaran({
+
+			content:{
+				img:'img/fleecemain3i.png',
+				themeName:'myTheme',
+				message1:'site by',
+				message2:'fleece'
+			},
+
+			delay:'5000',
+
+			themeTemplate:function(data){
+				return '<div class="mydiv" id="fleeceLink" ><div class="icon" style="position:absolute;float:left; margin-left:10px; top:0px;"><div class="wrapper"><div class="cube"><b class="front"><img src="'+ data.img + '" /></b><b class="back"><img src="'+ data.img + '" /></b><b class="top"></b><b class="bottom"></b><b class="left"><img src="'+ data.img + '" /></b><b class="right"><img src="'+ data.img + '" /></b></div></div></div><div class="info" style="padding-top: 10px; margin-left:90px;  position:relative; width=100%;"><span class="title">'+ data.message1 + '</span><br><span>'+ data.message2 + '</span></div></div>';
+			},
+
+			position:'top right'
+		});
+
+		jQuery('[id=fleeceLink]').click(function(event) {
+			window.location.assign('http://fleecehop.com')
+		});
+
+	},15000);
+
+	//every 25 seconds Falco//twitter
+	setInterval(function(){
+
+		//notifications
 		$.amaran({
 
 			content:{
@@ -208,10 +276,11 @@ $(function() {
 			delay:'5000',
 
 			themeTemplate:function(data){
-				return '<div class="mydiv" id="bwtwitter"><div class="icon" style="width:70px;height:70px;position:relative;float:left;"><img id="falcoface" src="'+data.img + '" style="max-width:100%;"></div><div class="info" style="padding-top: 10px;"><span class="title">Follow<br>@BandWidthBoys</span></div></div>';
+				return '<div class="mydiv" id="bwtwitter"><div class="icon" style="width:50px;height:50px;position:relative;float:left;"><img id="falcoface" src="'+data.img + '" style="max-width:100%;"></div><div class="info" style="padding-top: 10px;"><span class="title">Follow<br>@BandWidthBoys</span></div></div>';
 			},
 
-			position:'bottom right'
+			position:'top right'
+
 		});
 		
 		//when falcos face gets hovered, change

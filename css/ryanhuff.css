@@ -1,0 +1,88 @@
+body{
+	background-color: black;
+}
+
+
+
+/* scene wrapper */
+.wrapper{
+/*150px*/
+  height: 100%;
+  /*margin-top:30px;*/
+  position:relative;
+  perspective: 800;
+  perspective-origin: 50% 50px;
+}
+
+/* cube wrapper */
+.cube{
+	position: relative;
+	margin: 0 auto;
+	margin-top: 0px;
+	width: 40px;
+	transform-style: preserve-3d;
+	transition: all 1s linear;
+	-webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+	-moz-animation-fill-mode:forwards; /*FF 5+*/
+	-o-animation-fill-mode:forwards; /*Not implemented yet*/
+	-ms-animation-fill-mode:forwards; /*IE 10+*/
+	animation-fill-mode:forwards; /*when the spec is finished*/
+
+	animation: spin 5s infinite linear;
+	-webkit-animation: spin 5s infinite linear;
+	transition: all 1s linear;
+}
+
+/* outer cube */
+b{
+  position:absolute;
+  width:40px;
+  height:35px;
+  display:block;
+  /*background:rgba(255,255,255,0.1);*/
+  /*box-shadow:inset 0 0 30px rgba(0,0,0,0.2);*/
+  font-size:10px;
+  text-align:center;
+  line-height:60px;
+  color:rgba(0,0,0,0.5);
+  font-family:sans-serif;
+  text-transform:uppercase;
+  transition: all 1s linear;
+}
+b.back{
+  transform: translateZ(-20px) rotateY(180deg);
+}
+b.right{
+  transform:rotateY(-270deg) translateX(20px);
+  transform-origin: top right;
+}
+b.left{
+  transform:rotateY(270deg) translateX(-20px);
+  transform-origin: center left;
+}
+b.top{
+  transform:rotateX(-90deg) translateY(-20px);
+  transform-origin: top center;
+}
+b.bottom{
+  transform:rotateX(90deg) translateY(20px);
+  transform-origin: bottom center;
+}
+b.front{
+  transform: translateZ(20px);
+}
+
+b img{
+	max-width: 100%;
+	max-height: 100%;
+	width:100%;
+	height: 100%;
+
+}
+
+div.amaran.myTheme{
+    background-color: black;
+    color:white;
+	height:55px;
+	min-height: 50px;
+}
