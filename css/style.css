@@ -31,7 +31,11 @@
 	opacity: 1;
 	color: #000000;
 }
+.navbar-toggle{
 
+	border: 1px solid black;
+
+}
 .navText{
 	font-family: coffee;
 	color: #000000;
