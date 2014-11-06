@@ -178,6 +178,18 @@
 	  from { transform: rotateY(0); }
 	  to   { transform: rotateY(360deg); }
 	}
+	@-o-keyframes spin {
+	  from { transform: rotateY(0); }
+	  to   { transform: rotateY(360deg); }
+	}
+	@-moz-keyframes spin {
+	  from { transform: rotateY(0); }
+	  to   { transform: rotateY(360deg); }
+	}
+	@keyframes spin {
+	  from { transform: rotateY(0); }
+	  to   { transform: rotateY(360deg); }
+	}
 
 </style>
 
@@ -186,103 +198,172 @@
 <script>
 
 $(function() {
-	
-	//loads when the page loads falco//twitter
-	$.amaran({
 
-		content:{
-			img:'img/falco2.png',
-			themeName:'myTheme',
-			firstname:'Hakan',
-			lastname:'ERSU',
-			message:'Hi'
-		},
+	var minNotificationWidth = 600;
 
-		delay:'5000',
+	//make sure the news portion loads in correct width
+	$('.blogPost').css("width","80%");
 
-		themeTemplate:function(data){
-			return '<div class="mydiv" id="bwtwitter"><div class="icon" style="width:50px;height:50px;position:relative;float:left;"><img id="falcoface" src="'+data.img + '" style="max-width:100%;"></div><div class="info" style="padding-top: 10px;"><span class="title">Follow<br>@BandWidthBoys</span></div></div>';
-		},
 
-		position:'top right'
+	//on load get width used for testing
+	var width=$(window).width();
+	console.log("width =" + width);
+
+	//window size
+	$( window ).resize(function() {
+		width=$(window).width();
+		console.log("width =" + width);
+
+		if(width < 850){
+
+			$('#bioView').css("width","100%");
+			$('#blogView').css("width","100%");
+			$('.blogPost').css("width","80%");
+
+		}
+		else{
+
+			$('#bioView').css("width","40%");
+			$('#blogView').css("width","60%");
+			$('.blogPost').css("width","80%");
+					
+		}
 	});
 
-	//every 10 seconds ryan huff is online
-	setInterval(function(){
+	function falcoNotification(){
 
-		//notifications
-		$.amaran({
+		if(width > minNotificationWidth){
 
-			content:{
-				img:'img/crocktoberfest.jpg',
-				themeName:'myTheme',
-				message1:'Ryan Huff',
-				message2:'is online!'
-			},
+			//loads when the page loads falco//twitter
+			$.amaran({
 
-			delay:'3000',
+				content:{
+					img:'img/falco2.png',
+					themeName:'myTheme',
+				},
 
-			themeTemplate:function(data){
-				return '<div class="mydiv" ><div class="icon" style="position:absolute;float:left; margin-left:10px; top:0px;"><div class="wrapper"><div class="cube"><b class="front"><img src="'+ data.img + '" /></b><b class="back"><img src="'+ data.img + '" /></b><b class="top"></b><b class="bottom"></b><b class="left"><img src="'+ data.img + '" /></b><b class="right"><img src="'+ data.img + '" /></b></div></div></div><div class="info" style="padding-top: 10px; margin-left:90px;  position:relative; width=100%;"><span class="title">'+ data.message1 + '</span><br><span>'+ data.message2 + '</span></div></div>';
-			},
+				clearAll:true,
 
-			position:'top right'
-		});
+				delay:'5000',
 
-	},10000);
+				themeTemplate:function(data){
+					return '<div class="mydiv" id="bwtwitter"><div class="icon" style="width:50px;height:50px;position:relative;float:left;"><img id="falcoface" src="'+data.img + '" style="max-width:100%;"></div><div class="info" style="padding-top: 10px;"><span class="title">Follow<br>@BandWidthBoys</span></div></div>';
+				},
 
-	//every 15 seconds fleece
-	setInterval(function(){
+				position:'top right'
+			});
 
-		//notifications
-		$.amaran({
+			//when falcos face gets hovered, change
+			$('[id=falcoface]')
+				.mouseover(function() { 
+					var src = "img/falco1.png";
+					$(this).attr("src", src);
+				})
+				.mouseout(function() {
+					var src = "img/falco2.png";
+					$(this).attr("src", src);
+			});
+			
+			//if falco clicked navigate to twitter
+			$('[id=bwtwitter]').click(function(event) {
+				window.location.assign('http://twitter.com/BandWidthBoys')
+			});
+		}
+	}
 
-			content:{
-				img:'img/fleecemain3i.png',
-				themeName:'myTheme',
-				message1:'site by',
-				message2:'fleece'
-			},
+	function crockNotification(){
 
-			delay:'5000',
+		if(width > minNotificationWidth){
+			//notifications
+				$.amaran({
 
-			themeTemplate:function(data){
-				return '<div class="mydiv" id="fleeceLink" ><div class="icon" style="position:absolute;float:left; margin-left:10px; top:0px;"><div class="wrapper"><div class="cube"><b class="front"><img src="'+ data.img + '" /></b><b class="back"><img src="'+ data.img + '" /></b><b class="top"></b><b class="bottom"></b><b class="left"><img src="'+ data.img + '" /></b><b class="right"><img src="'+ data.img + '" /></b></div></div></div><div class="info" style="padding-top: 10px; margin-left:90px;  position:relative; width=100%;"><span class="title">'+ data.message1 + '</span><br><span>'+ data.message2 + '</span></div></div>';
-			},
+					content:{
+						img:'img/crocktoberfest.jpg',
+						themeName:'myTheme',
+						message1:'Ryan Huff',
+						message2:'is online!'
+					},
 
-			position:'top right'
-		});
+					clearAll:true,
+					
+					delay:'3000',
 
-		jQuery('[id=fleeceLink]').click(function(event) {
-			window.location.assign('http://fleecehop.com')
-		});
+					themeTemplate:function(data){
+						return '<div class="mydiv" id="crockLink"><div class="icon" style="position:absolute;float:left; margin-left:10px; top:0px;"><div class="wrapper"><div class="cube"><b class="front"><img src="'+ data.img + '" /></b><b class="back"><img src="'+ data.img + '" /></b><b class="top"></b><b class="bottom"></b><b class="left"><img src="'+ data.img + '" /></b><b class="right"><img src="'+ data.img + '" /></b></div></div></div><div class="info" style="padding-top: 10px; margin-left:90px;  position:relative; width=100%;"><span class="title">'+ data.message1 + '</span><br><span>'+ data.message2 + '</span></div></div>';
+					},
 
-	},15000);
+					position:'top right'
+				});
 
-	//every 25 seconds Falco//twitter
-	setInterval(function(){
+				//if crock is clicked nav to fleecehop.com
+				$('[id=crockLink]').click(function(event) {
+					window.location.assign('live')
+				});
+		}
+	}
 
-		//notifications
-		$.amaran({
+	function fleeceNotification(){
+		if(width > minNotificationWidth){
+			//notifications
+			$.amaran({
 
-			content:{
-				img:'img/falco2.png',
-				themeName:'myTheme',
-				firstname:'Hakan',
-				lastname:'ERSU',
-				message:'Hi'
-			},
+				content:{
+					img:'img/fleecemain3i.png',
+					themeName:'myTheme',
+					message1:'site by',
+					message2:'fleece'
+				},
 
-			delay:'5000',
+				clearAll:true,
 
-			themeTemplate:function(data){
-				return '<div class="mydiv" id="bwtwitter"><div class="icon" style="width:50px;height:50px;position:relative;float:left;"><img id="falcoface" src="'+data.img + '" style="max-width:100%;"></div><div class="info" style="padding-top: 10px;"><span class="title">Follow<br>@BandWidthBoys</span></div></div>';
-			},
+				delay:'5000',
 
-			position:'top right'
+				themeTemplate:function(data){
+					return '<div class="mydiv" id="fleeceLink" ><div class="icon" style="position:absolute;float:left; margin-left:10px; top:0px;"><div class="wrapper"><div class="cube"><b class="front"><img src="'+ data.img + '" /></b><b class="back"><img src="'+ data.img + '" /></b><b class="top"></b><b class="bottom"></b><b class="left"><img src="'+ data.img + '" /></b><b class="right"><img src="'+ data.img + '" /></b></div></div></div><div class="info" style="padding-top: 10px; margin-left:90px;  position:relative; width=100%;"><span class="title">'+ data.message1 + '</span><br><span>'+ data.message2 + '</span></div></div>';
+				},
 
-		});
-		
+				position:'top right'
+			});
+
+			//if fleece is clicked nav to fleecehop.com
+			$('[id=fleeceLink]').click(function(event) {
+				window.location.assign('http://fleecehop.com')
+			});
+		}
+	}
+
+
+
+	//if the width of the window is greater than minNotificationWidth, show notifications
+	if (width > minNotificationWidth)
+    {
+		//loads when the page loads falco//twitter
+		falcoNotification();
+
+		//every 10 seconds ryan huff is online
+		setInterval(function(){
+
+			crockNotification();
+
+		},10000);
+
+		//every 15 seconds fleece
+		setInterval(function(){
+
+			fleeceNotification();
+
+		},15000);
+
+		//every 25 seconds Falco//twitter
+		setInterval(function(){
+
+			falcoNotification();
+
+		},25000);
+				
+
+	}
+
 		//when falcos face gets hovered, change
 		jQuery('[id=falcoface]')
 			.mouseover(function() { 
@@ -297,29 +378,15 @@ $(function() {
 		jQuery('[id=bwtwitter]').click(function(event) {
 			window.location.assign('http://twitter.com/BandWidthBoys')
 		});
+	  
+			
+	//}
 
-	},25000);
-
-	//when falcos face gets hovered, change
-	jQuery('[id=falcoface]')
-		.mouseover(function() { 
-			var src = "img/falco1.png";
-			$(this).attr("src", src);
-		})
-		.mouseout(function() {
-			var src = "img/falco2.png";
-			$(this).attr("src", src);
-	});
-
-	jQuery('[id=bwtwitter]').click(function(event) {
-		window.location.assign('http://twitter.com/BandWidthBoys')
-	});
-  
 	//--------script for snow easter egg
-    $('.logodiv').click(function(){
+	$('.logodiv').click(function(){
 		//snowFall.snow(document.body);
 		matrix();
-    })
+	})
 
 });
 </script>

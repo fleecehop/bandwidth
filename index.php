@@ -13,26 +13,13 @@
 <html>
 	<style>
 
-		a{
-			color:white;
-		}
-		a:hover{
-			color:gray;
-			cursor: auto;
-			text-decoration: none;
-		}
-		h3{
-			font-family: coffee;
-		}
-		h4{
-			font-family: coffee;
-		}
+		
 	</style>
 	
 
 	<body>
 		
-		<div id='wrapper'>
+		<div id='wrapper' class='onehunned'>
 			<div id='bioView' >
 				<h3>BIO</h3>
 				<p>
@@ -81,6 +68,9 @@
 		$(function(){
 			$("body").height($(window).height());
 			$("#wrapper").height($(window).height() - $('#logodiv').height() - $('#navbar').height() - 25) ;
+			$( window ).resize(function() {
+  				$('#blogView').css('height','80%');
+			});
 			//$('#blogView').css('height','100%');
 			$('#blogViewer').slimScroll({
 				height:'100%',
